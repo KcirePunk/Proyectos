@@ -1,0 +1,14 @@
+<header>
+    <aside>
+        <a (click)="ver(estado = !estado)" id="logo" class="logo">KP</a>
+    </aside>
+    <nav id="nav">
+        <a [routerLinkActive]="['active']" [routerLink]="['/sobre-mi']">Sobre Mi</a>
+        <a [routerLinkActive]="['active']" [routerLink]="['/proyectos']">Proyectos</a>
+        <a [routerLink]="['/']" class="logo">KP</a>
+        <a [routerLinkActive]="['active']" [routerLink]="['/crear-proyecto']">Crear Proyectos</a>
+        <a [routerLinkActive]="['active']" [routerLink]="['/contacto']">Contacto</a>
+    </nav>
+</header>
+
+

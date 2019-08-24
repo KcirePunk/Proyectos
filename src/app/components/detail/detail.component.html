@@ -1,0 +1,16 @@
+<section class="project-detalles" *ngIf="project">
+    <div class="imgae-detalle">
+      <img [src]="url+'get-image/'+project.image">
+    </div>
+    <article>
+        <h1>{{project.name}}</h1>
+        <hr>
+        <h3>{{project.description}}</h3>
+        <p>{{project.category}}</p>
+        <p>{{project.langs}}</p>
+    </article>
+
+      <button [routerLink]="['/editar-proyecto', project._id]" mat-raised-button color="primary" >Editar</button>
+      <button (click)="deleteProject(project._id)" mat-raised-button color="accent">Borrar</button>
+
+</section>

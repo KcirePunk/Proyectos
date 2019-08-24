@@ -1,0 +1,12 @@
+<div class="container">
+    <h1>Contacto</h1>
+
+    <input (keyup.enter)="cargar()" type="number" [(ngModel)]="widthSlider">
+
+    <button>Cargar Slider</button>
+    <div *ngIf="anchuraToSlider">
+        <strong>{{widthSlider}}</strong>
+
+        <app-slider [anchura]="anchuraToSlider"></app-slider>  
+    </div>
+</div>

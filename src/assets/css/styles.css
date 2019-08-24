@@ -1,0 +1,251 @@
+/* Colores Angular Material */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+/* Importar fuentes custom */
+@font-face {
+    font-family: 'yanone';
+    src: url('../fonts/yanone.ttf');
+}
+
+@font-face {
+    font-family: 'finger';
+    src: url('../fonts/finger.ttf');
+}
+
+/* Generales */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.active {
+    text-decoration: underline;
+}
+
+body {
+    font-family: 'yanone', Arial, Helvetica;
+    font-size: 20px;
+    background: url('../img/pattern.png');
+    background-repeat: repeat;
+    background-attachment: fixed;
+}
+
+.clearfix {
+    float: none;
+    clear: both;
+}
+
+a {
+    text-decoration: none;
+    display: inline-block;
+}
+
+header {
+    width: 100%;
+    height: 96px;
+    display: block;
+    background: rgb(53, 103, 164);
+    position: fixed;
+    text-transform: uppercase;
+    z-index: 2;
+}
+
+header nav {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+}
+
+header nav a {
+    color: #fff;
+    padding: 15px 20px;
+    transition: all 300ms;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+header nav .logo,
+header aside .logo {
+    font-size: 45px;
+    font-weight: bold;
+    font-family: 'finger';
+    transition: all 400ms;
+}
+
+header aside {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    display: none;
+}
+
+header aside .logo {
+    color: #fff;
+    text-align: center;
+}
+
+header nav .logo:hover,
+header aside .logo:hover {
+    background: transparent;
+    transform: scale(1.50);
+    text-decoration: none;
+    color: #000;
+}
+
+/* Contenedor principal */
+
+.content {
+    width: 75%;
+    padding: 50px 20px;
+    margin: 0px auto;
+    box-shadow: 0px 0px 40px #000;
+    background: rgba(255, 255, 255, 0.7);
+    padding-top: 100px;
+}
+
+/* Pie de pagina */
+
+footer {
+    width: 75%;
+    margin: 0 auto;
+    padding: 15px 20px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+/* Sobre mi */
+
+.title {
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 100px;
+}
+
+.title h1 {
+    font-family: 'finger';
+    font-size: 60px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+}
+
+.title h2 {
+    font-size: 25px;
+    color: gray;
+    margin: 5px 0;
+}
+
+.about {
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    font-size: 23px;
+}
+
+.about h2 {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
+
+.about p {
+    padding-top: 20px;
+    padding-bottom: 30px;
+    text-align: justify;
+}
+
+
+.contenedor h2 {
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    padding: 15px 0;
+}
+
+.container-form {
+    width: 70%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-form mat-form-field input,
+.container-form mat-form-field textarea {
+    width: 100%;
+}
+
+.container-form mat-form-field textarea {
+    max-height: 220px;
+}
+
+.container-form .error {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.message {
+    width: 100%;
+}
+
+.btn {
+    background: rgb(53, 103, 164) !important;
+    color: #fff !important;
+}
+
+.btn:disabled {
+    opacity: 0.5;
+}
+
+.project-detalles {
+  width: 100%;
+  padding: 15px;
+}
+
+.project-detalles .imgae-detalle {
+  width: 100%;
+}
+
+.project-detalles .imgae-detalle img {
+  vertical-align: top;
+  width: 100%;
+}
+
+.project-detalles article {
+  width: 100%;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.project-detalles article h1 {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 885px){
+    header nav {
+        background: #ccc;
+        flex-wrap: wrap;
+        flex-direction: column;
+        display: none;
+        text-align: center;
+    }
+
+    header aside {
+        display: block;
+    }
+
+    header nav a {
+        width: 100%;
+    }
+
+    header nav .logo {
+        display: none;
+    }
+}

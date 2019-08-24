@@ -1,0 +1,94 @@
+<div class="contenedor">
+    <h2>{{title}}</h2>
+
+    <div class="message">
+        <mat-toolbar *ngIf="status == true" color="primary">EL projecto se a guardado correctamente, puedes verlo <a [routerLink]="['/proyecto', saveProject._id]">aqui.</a>.</mat-toolbar>
+    </div>
+
+    <form #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm)">
+        <div class="container-form">
+            <mat-form-field>
+                <input
+                    matInput
+                    placeholder="Nombre"
+                    #name="ngModel"
+                    name="name"
+                    [(ngModel)]="project.name"
+                    required>
+            </mat-form-field>
+
+            <mat-chip-list *ngIf="name.touched && !name.valid" aria-label="Fish selection">
+                    <mat-chip class="error" color="accent" selected>El campo nombre es obligatorio*</mat-chip>
+            </mat-chip-list>
+
+            <mat-form-field>
+                    <textarea
+                        matInput
+                        placeholder="Descripcion"
+                        #description="ngModel"
+                        name="description"
+                        [(ngModel)]="project.description"
+                        required></textarea>
+                </mat-form-field>
+
+            <mat-chip-list *ngIf="description.touched && !description.valid" aria-label="Fish selection">
+                    <mat-chip class="error" color="accent" selected>El campo description es obligatorio*</mat-chip>
+            </mat-chip-list>
+
+                <mat-form-field>
+                        <input
+                            matInput
+                            placeholder="Categoria"
+                            #category="ngModel"
+                            name="category"
+                            [(ngModel)]="project.category"
+                            required>
+
+                </mat-form-field>
+
+                <mat-chip-list *ngIf="category.touched && !category.valid" aria-label="Fish selection">
+                        <mat-chip class="error" color="accent" selected>El campo category es obligatorio*</mat-chip>
+                </mat-chip-list>
+
+                <mat-form-field>
+                        <input
+                            matInput
+                            placeholder="Año de lanzamiento"
+                            #year="ngModel"
+                            name="year"
+                            type="number"
+                            [(ngModel)]="project.year"
+                            required>
+                </mat-form-field>
+
+                <mat-chip-list *ngIf="year.touched && !year.valid" aria-label="Fish selection">
+                        <mat-chip class="error" color="accent" selected>El campo year es obligatorio*</mat-chip>
+                </mat-chip-list>
+
+                <mat-form-field>
+                        <input
+                            matInput
+                            placeholder="Lenguajes Utilizados"
+                            #langs="ngModel"
+                            name="langs"
+                            [(ngModel)]="project.langs"
+                            required>
+                </mat-form-field>
+
+                <mat-chip-list *ngIf="langs.touched && !langs.valid" aria-label="Fish selection">
+                        <mat-chip class="error" color="accent" selected>El campo langs es obligatorio*</mat-chip>
+                </mat-chip-list>
+
+                <div *ngIf="project.image">
+                    <img width="500" [src]="url+'get-image/'+project.image">
+                </div>
+
+                <div>
+                    <input type="file" name="image" placeholder="Subir Imagen" (change)="fileChangeEvent($event)">
+                </div>
+
+                <button [disabled]="!projectForm.form.valid" type="submit" class="btn" mat-raised-button>Guardar</button>
+        </div>
+    </form>
+</div>
+
